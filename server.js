@@ -2,7 +2,10 @@ const express = require('express')
 const app = express()
 const port = 3000
 const bcrypt = require('bcrypt');
+const passport = require('passport');
 
+const initializePassport = require('./passport-config')
+initializePassport (passport , email => users.find(user => user.email === email)  )
 const users = []
 //view engines and middleware
 app.set('view engine', 'ejs')
